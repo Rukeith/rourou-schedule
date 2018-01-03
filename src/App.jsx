@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+import Group from './components/Group/Group.jsx'
 export default class App extends Component {
   render() {
     return (
-      <div>Test</div>
+      <div>
+        <Group/>
+        <Button color="primary">Test</Button>
+      </div>
     );
   }
 }

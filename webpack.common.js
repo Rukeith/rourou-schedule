@@ -27,6 +27,10 @@ module.exports = {
             { loader: 'sass-loader', options: { sourceMap: true } }
           ]
         })
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        use: 'url-loader'
       }
     ]
   },
