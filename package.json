@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "dev:open": "npm run dev -- --open"
   },
   "repository": "https://github.com/Rukeith/rourou-schedule.git",
   "author": "Rukeith <fenglan.crazydance@gmail.com>",
@@ -19,6 +20,7 @@
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.0.9",

@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+// Generate html template
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// Clean bundle folder
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -14,11 +16,11 @@ module.exports = {
     rules: [
       {
         use: 'babel-loader',
-        test: /\.js$|\.jsx$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/
       },
       {
-        test: /\.scss$|\.sass$|\.css$/,
+        test: /\.(scss|sass|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -30,29 +32,20 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: 'url-loader'
+        use: 'file-loader'
       }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin(),
     new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin('[hash].styles.css'),
     new HtmlWebpackPlugin({
+      hash: process.env.NODE_ENV === 'production',
       inject: 'body',
       title: 'Rou Rou',
+      author: 'rou rou test',
       template: 'src/index.html',
     })
-  ],
-  devServer: {
-    port: 3000,
-    host: 'localhost',
-    hot: true,
-    // enable HMR on the server
-    historyApiFallback: true,
-    // respond to 404s with index.html
-  },
-  devtool: 'inline-source-map'
+  ]
 };
