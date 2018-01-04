@@ -46,6 +46,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: 'body',
       title: 'Rou Rou',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      },
       author: 'rou rou test',
       template: 'src/index.html',
       hash: process.env.NODE_ENV === 'production'
