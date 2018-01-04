@@ -32,20 +32,23 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: 'file-loader'
+        use: 'url-loader'
       }
     ]
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(['dist']),
-    new ExtractTextPlugin('[hash].styles.css'),
+    new ExtractTextPlugin({
+      filename: '[hash].styles.css',
+      disable: process.env.NODE_ENV !== 'production'
+    }),
     new HtmlWebpackPlugin({
-      hash: process.env.NODE_ENV === 'production',
       inject: 'body',
       title: 'Rou Rou',
       author: 'rou rou test',
       template: 'src/index.html',
+      hash: process.env.NODE_ENV === 'production'
     })
   ]
 };
