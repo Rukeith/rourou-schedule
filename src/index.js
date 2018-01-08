@@ -1,12 +1,17 @@
 require('bootstrap/dist/css/bootstrap.css');
 require('./styles/main.scss');
 const React = require('react');
+const { createStore } = require('redux');
+const { render } = require('react-dom');
 const { Provider } = require('react-redux');
-const ReactDOM = require('react-dom');
+// import todoApp from './store/reducers'
 import App from './App.jsx';
 
-ReactDOM.render(
+// const store = createStore();
+
+render(
   <Provider>
+  {/* <Provider store={store}> */}
     <App />
   </Provider>,
   document.getElementById('root')

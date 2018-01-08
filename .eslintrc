@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "globalReturn": true,
+      "impliedStrict": true,
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
+      "allowImportExportEverywhere": true
+    }
+  },
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "commonjs": true,
+    "shared-node-browser": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "import/resolver": {
+      "webpack": {}
+    }
+  }
+}

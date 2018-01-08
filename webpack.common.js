@@ -10,14 +10,20 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
         use: 'babel-loader',
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(scss|sass|css)$/,
@@ -26,33 +32,38 @@ module.exports = {
           use: [
             { loader: 'css-loader', options: { sourceMap: true } },
             { loader: 'postcss-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } }
-          ]
-        })
+            { loader: 'sass-loader', options: { sourceMap: true } },
+          ],
+        }),
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: 'url-loader'
-      }
-    ]
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8192, // file size is lower than 8192B will convert to base64
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin({
       filename: '[hash].styles.css',
-      disable: process.env.NODE_ENV !== 'production'
+      disable: process.env.NODE_ENV !== 'production',
     }),
     new HtmlWebpackPlugin({
       inject: 'body',
       title: 'Rou Rou',
       minify: {
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       },
       author: 'rou rou test',
       template: 'src/index.html',
-      hash: process.env.NODE_ENV === 'production'
-    })
-  ]
+      hash: process.env.NODE_ENV === 'production',
+    }),
+  ],
 };
