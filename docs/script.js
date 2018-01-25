@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-  $("#cal").click(function() {
-    const dayChecked = $("#day").prop("checked");
-    const nightChecked = $("#night").prop("checked");
+  $(".cal-btn").click(function() {
+    const dayChecked = $("#cal-day").prop("checked");
+    const nightChecked = $("#cal-night").prop("checked");
 
     let dayResult = 0;
     if (dayChecked) {

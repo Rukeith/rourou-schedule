@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Rou Rou 肉肉</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="day col-sm-5">
+        <h3>早班</h3>
+        <form>
+          <div class="col-sm-6 start">
+            <p class="text-primary">開始時間</p>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="hour custom-select my-1 mr-sm-2" id="day-hour">
+                  <option value="11" selected>11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                </select>
+              </div>
+              <label for="day-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="min custom-select my-1 mr-sm-2" id="day-min">
+                  <option value="00" selected>00</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <label for="day-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            </div>
+          </div>
+
+          <div class="col-sm-6 end">
+            <p class="text-primary">結束時間</p>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="hour custom-select my-1 mr-sm-2" id="day-hour">
+                  <option value="11" selected>11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                </select>
+              </div>
+              <label for="day-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="min custom-select my-1 mr-sm-2" id="day-min">
+                  <option value="00" selected>00</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <label for="day-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            </div>
+          </div>
+        
+          <div class="custom-control custom-checkbox my-1 mr-sm-2">
+            <input type="checkbox" class="custom-control-input" id="cal-day" checked>
+            <label class="custom-control-label" for="cal-day">是否包含早班？</label>
+          </div>
+        </form>
+      </div>
+      <div class="night col-sm-5">
+        <h3>晚班</h3>
+        <form>
+          <div class="col-sm-6 start">
+            <p class="text-primary">開始時間</p>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="hour custom-select my-1 mr-sm-2" id="night-hour">
+                  <option value="11" selected>11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                </select>
+              </div>
+              <label for="night-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="min custom-select my-1 mr-sm-2" id="night-min">
+                  <option value="00" selected>00</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <label for="night-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            </div>
+          </div>
+
+          <div class="col-sm-6 end">
+            <p class="text-primary">結束時間</p>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="hour custom-select my-1 mr-sm-2" id="night-hour">
+                  <option value="11" selected>11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                </select>
+              </div>
+              <label for="night-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <select class="min custom-select my-1 mr-sm-2" id="night-min">
+                  <option value="00" selected>00</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <label for="night-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            </div>
+          </div>
+        
+          <div class="custom-control custom-checkbox my-1 mr-sm-2">
+            <input type="checkbox" class="custom-control-input" id="cal-night" checked>
+            <label class="custom-control-label" for="cal-night">是否包含晚班？</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row total">
+      <button type="button" class="btn btn-info cal-btn">結算總時數</button>
+    </div>
+    <hr/>
+    <div class="row align-items-center">
+      <div>
+        總時數為：
+        <p id="result" class="text-primary">0</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./moment.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
