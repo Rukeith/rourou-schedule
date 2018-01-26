@@ -1,0 +1,26 @@
+.submit-btn,
+.result {
+  margin-left: 0;
+}
+
+.day,
+.night {
+  margin-bottom: 20px;
+}
+
+footer {
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  line-height: 50px;
+  color: rgba(255,255,255,.6);
+  background-color: rgba(0,0,0,.4);
+  text-align: center;
+  font-size: .9rem;
+}
+
+footer strong {
+  color: #fff;
+}

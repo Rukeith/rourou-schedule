@@ -7,61 +7,60 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="./style.css">
   <title>Rou Rou 肉肉</title>
 </head>
 <body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Rou Rou 肉肉</h1>
+      <p class="lead">吃肉肉 長肉肉</p>
+    </div>
+  </div>
   <div class="container">
+
     <div class="row align-items-start">
-      <div class="day col-sm-5">
+      <div class="day col-sm-6">
         <h3>早班</h3>
         <form>
-          <div class="col-sm-6 start">
-            <p class="text-primary">開始時間</p>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="hour custom-select my-1 mr-sm-2" id="day-hour">
-                  <option value="11" selected>11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                </select>
-              </div>
-              <label for="day-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+          <div class="row start">
+            <p class="text-primary col-sm-2 col-12">開始時間</p>
+            <div class="col-sm-4 col-10">
+              <select class="hour custom-select my-1 mr-sm-2" id="day-start-hour">
+                <option value="11" selected>11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+              </select>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="min custom-select my-1 mr-sm-2" id="day-min">
-                  <option value="00" selected>00</option>
-                  <option value="30">30</option>
-                </select>
-              </div>
-              <label for="day-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            <label for="day-start-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
+            <div class="col-sm-4 col-10">
+              <select class="min custom-select my-1 mr-sm-2" id="day-start-min">
+                <option value="00" selected>00</option>
+                <option value="30">30</option>
+              </select>
             </div>
+            <label for="day-start-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
           </div>
 
-          <div class="col-sm-6 end">
-            <p class="text-primary">結束時間</p>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="hour custom-select my-1 mr-sm-2" id="day-hour">
-                  <option value="11" selected>11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                </select>
-              </div>
-              <label for="day-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+          <div class="row end">
+            <p class="text-primary col-sm-2 col-12">結束時間</p>
+            <div class="col-sm-4 col-10">
+              <select class="hour custom-select my-1 mr-sm-2" id="day-end-hour">
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14" selected>14</option>
+              </select>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="min custom-select my-1 mr-sm-2" id="day-min">
-                  <option value="00" selected>00</option>
-                  <option value="30">30</option>
-                </select>
-              </div>
-              <label for="day-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            <label for="day-end-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
+            <div class="col-sm-4 col-10">
+              <select class="min custom-select my-1 mr-sm-2" id="day-end-min">
+                <option value="00">00</option>
+                <option value="30" selected>30</option>
+              </select>
             </div>
+            <label for="day-end-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
           </div>
         
           <div class="custom-control custom-checkbox my-1 mr-sm-2">
@@ -70,57 +69,54 @@
           </div>
         </form>
       </div>
-      <div class="night col-sm-5">
+
+      <div class="night col-sm-6">
         <h3>晚班</h3>
         <form>
-          <div class="col-sm-6 start">
-            <p class="text-primary">開始時間</p>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="hour custom-select my-1 mr-sm-2" id="night-hour">
-                  <option value="11" selected>11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                </select>
-              </div>
-              <label for="night-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+          <div class="row start">
+            <p class="text-primary col-sm-2 col-12">開始時間</p>
+            <div class="col-sm-4 col-10">
+              <select class="hour custom-select my-1 mr-sm-2" id="night-start-hour">
+                <option value="17" selected>17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+              </select>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="min custom-select my-1 mr-sm-2" id="night-min">
-                  <option value="00" selected>00</option>
-                  <option value="30">30</option>
-                </select>
-              </div>
-              <label for="night-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            <label for="night-start-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
+            <div class="col-sm-4 col-10">
+              <select class="min custom-select my-1 mr-sm-2" id="night-start-min">
+                <option value="00" selected>00</option>
+                <option value="30">30</option>
+              </select>
             </div>
+            <label for="night-start-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
           </div>
 
-          <div class="col-sm-6 end">
-            <p class="text-primary">結束時間</p>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="hour custom-select my-1 mr-sm-2" id="night-hour">
-                  <option value="11" selected>11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                </select>
-              </div>
-              <label for="night-hour" class="col-sm-2 col-form-label col-form-label-lg">時</label>
+          <div class="row end">
+            <p class="text-primary col-sm-2 col-12">結束時間</p>
+            <div class="col-sm-4 col-10">
+              <select class="hour custom-select my-1 mr-sm-2" id="night-end-hour">
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22" selected>22</option>
+              </select>
             </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <select class="min custom-select my-1 mr-sm-2" id="night-min">
-                  <option value="00" selected>00</option>
-                  <option value="30">30</option>
-                </select>
-              </div>
-              <label for="night-min" class="col-sm-2 col-form-label col-form-label-lg">分</label>
+            <label for="night-end-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
+            <div class="col-sm-4 col-10">
+              <select class="min custom-select my-1 mr-sm-2" id="night-end-min">
+                <option value="00">00</option>
+                <option value="30" selected>30</option>
+              </select>
             </div>
+            <label for="night-end-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
           </div>
-        
+      
           <div class="custom-control custom-checkbox my-1 mr-sm-2">
             <input type="checkbox" class="custom-control-input" id="cal-night" checked>
             <label class="custom-control-label" for="cal-night">是否包含晚班？</label>
@@ -128,17 +124,26 @@
         </form>
       </div>
     </div>
-    <div class="row total">
+
+    <div class="row submit-btn">
       <button type="button" class="btn btn-info cal-btn">結算總時數</button>
     </div>
     <hr/>
-    <div class="row align-items-center">
+
+    <!-- Total times -->
+    <div class="row result align-items-center">
       <div>
         總時數為：
-        <p id="result" class="text-primary">0</p>
+        <strong id="result" class="display-4 text-primary">0</strong>
       </div>
     </div>
   </div>
+  <footer>
+    <div class="container-fluid">
+      © 2017 Copyright: <strong>Rou Rou and Rukeith</strong>
+      Make for love
+    </div>
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
