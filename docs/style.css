@@ -8,9 +8,8 @@
   margin-bottom: 20px;
 }
 
-footer {
+footer.row {
   overflow: hidden;
-  bottom: 0;
   width: 100%;
   position: absolute;
   height: 50px;
@@ -18,7 +17,13 @@ footer {
   color: rgba(255,255,255,.6);
   background-color: rgba(0,0,0,.4);
   text-align: center;
-  font-size: .9rem;
+  font-size: .8rem;
+  margin: 0;
+  right: 0;
+}
+
+footer div {
+  margin: auto;
 }
 
 footer strong {
