@@ -13,19 +13,20 @@
 <body>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Rou Rou 肉肉</h1>
-      <pre class="lead">吃肉肉 長肉肉  ~~~~  愛的 UI 大升級</pre>
+      <h1 class="display-5">Rou Rou 肉肉</h1>
+      <pre class="lead">吃肉肉 長肉肉  ~~~~  </pre>
+      <p>郎客謀灣億，只好再升級 v1.1.1</p>
     </div>
   </div>
-  <div class="container-fluid">
 
+  <div class="container-fluid">
     <div class="row align-items-start">
       <div class="day col-sm-6">
-        <h3>早班</h3>
+        <h4>早班</h4>
         <form>
           <div class="row start">
             <p class="text-primary col-sm-2 col-12">開始時間</p>
-            <div class="col-sm-4 col-10">
+            <div class="timepicker col-sm-4 col-10">
               <select class="hour custom-select my-1 mr-sm-2" id="day-start-hour">
                 <option value="11" selected>11</option>
                 <option value="12">12</option>
@@ -33,19 +34,19 @@
                 <option value="14">14</option>
               </select>
             </div>
-            <label for="day-start-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
-            <div class="col-sm-4 col-10">
+            <label for="day-start-hour" class="col-sm-1 col-2 col-form-label">時</label>
+            <div class="timepicker col-sm-4 col-10">
               <select class="min custom-select my-1 mr-sm-2" id="day-start-min">
                 <option value="00" selected>00</option>
                 <option value="30">30</option>
               </select>
             </div>
-            <label for="day-start-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
+            <label for="day-start-min" class="col-sm-1 col-2 col-form-label">分</label>
           </div>
 
           <div class="row end">
             <p class="text-primary col-sm-2 col-12">結束時間</p>
-            <div class="col-sm-4 col-10">
+            <div class="timepicker col-sm-4 col-10">
               <select class="hour custom-select my-1 mr-sm-2" id="day-end-hour">
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -53,14 +54,14 @@
                 <option value="14" selected>14</option>
               </select>
             </div>
-            <label for="day-end-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
-            <div class="col-sm-4 col-10">
+            <label for="day-end-hour" class="col-sm-1 col-2 col-form-label">時</label>
+            <div class="timepicker col-sm-4 col-10">
               <select class="min custom-select my-1 mr-sm-2" id="day-end-min">
                 <option value="00">00</option>
                 <option value="30" selected>30</option>
               </select>
             </div>
-            <label for="day-end-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
+            <label for="day-end-min" class="col-sm-1 col-2 col-form-label">分</label>
           </div>
         
           <div class="custom-control custom-checkbox my-1 mr-sm-2">
@@ -71,11 +72,11 @@
       </div>
 
       <div class="night col-sm-6">
-        <h3>晚班</h3>
+        <h4>晚班</h4>
         <form>
           <div class="row start">
             <p class="text-primary col-sm-2 col-12">開始時間</p>
-            <div class="col-sm-4 col-10">
+            <div class="timepicker col-sm-4 col-10">
               <select class="hour custom-select my-1 mr-sm-2" id="night-start-hour">
                 <option value="17" selected>17</option>
                 <option value="18">18</option>
@@ -85,19 +86,19 @@
                 <option value="22">22</option>
               </select>
             </div>
-            <label for="night-start-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
-            <div class="col-sm-4 col-10">
+            <label for="night-start-hour" class="col-sm-1 col-2 col-form-label">時</label>
+            <div class="timepicker col-sm-4 col-10">
               <select class="min custom-select my-1 mr-sm-2" id="night-start-min">
                 <option value="00" selected>00</option>
                 <option value="30">30</option>
               </select>
             </div>
-            <label for="night-start-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
+            <label for="night-start-min" class="col-sm-1 col-2 col-form-label">分</label>
           </div>
 
           <div class="row end">
             <p class="text-primary col-sm-2 col-12">結束時間</p>
-            <div class="col-sm-4 col-10">
+            <div class="timepicker col-sm-4 col-10">
               <select class="hour custom-select my-1 mr-sm-2" id="night-end-hour">
                 <option value="17">17</option>
                 <option value="18">18</option>
@@ -107,14 +108,14 @@
                 <option value="22" selected>22</option>
               </select>
             </div>
-            <label for="night-end-hour" class="col-sm-1 col-2 col-form-label col-form-label-lg">時</label>
-            <div class="col-sm-4 col-10">
+            <label for="night-end-hour" class="col-sm-1 col-2 col-form-label">時</label>
+            <div class="timepicker col-sm-4 col-10">
               <select class="min custom-select my-1 mr-sm-2" id="night-end-min">
                 <option value="00">00</option>
                 <option value="30" selected>30</option>
               </select>
             </div>
-            <label for="night-end-min" class="col-sm-1 col-2 col-form-label col-form-label-lg">分</label>
+            <label for="night-end-min" class="col-sm-1 col-2 col-form-label">分</label>
           </div>
       
           <div class="custom-control custom-checkbox my-1 mr-sm-2">

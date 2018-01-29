@@ -8,6 +8,23 @@
   margin-bottom: 20px;
 }
 
+.container-fluid p {
+  font-size: .9rem;
+}
+
+.container-fluid label {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.jumbotron {
+  padding-bottom: 0;
+}
+
+.timepicker {
+  padding-left: 0;
+}
+
 footer.row {
   overflow: hidden;
   width: 100%;
