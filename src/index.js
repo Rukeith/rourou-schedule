@@ -1,18 +1,16 @@
-require('bootstrap/dist/css/bootstrap.css');
-require('./styles/main.scss');
-const React = require('react');
-const { createStore } = require('redux');
-const { render } = require('react-dom');
-const { Provider } = require('react-redux');
-// import todoApp from './store/reducers'
-import App from './App.jsx';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import App from '../common/containers/App';
+import configureStore from './store/configureStore';
+import './styles/main.scss';
 
-// const store = createStore();
+const preloadedState = window.PRELOADED_STATE;
+const store = configureStore(preloadedState);
 
 render(
-  <Provider>
-  {/* <Provider store={store}> */}
+  <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

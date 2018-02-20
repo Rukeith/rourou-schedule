@@ -1,9 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-// Generate html template
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// Clean bundle folder
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -11,6 +10,9 @@ module.exports = {
   output: {
     filename: '[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -24,6 +26,9 @@ module.exports = {
         use: 'babel-loader',
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        options: {
+          cacheDirectory: true,
+        },
       },
       {
         test: /\.(scss|sass|css)$/,
@@ -50,6 +55,9 @@ module.exports = {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(['dist']),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    }),
     new ExtractTextPlugin({
       filename: '[hash].styles.css',
       disable: process.env.NODE_ENV !== 'production',
@@ -57,13 +65,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: 'body',
       title: 'Rou Rou',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-      },
-      author: 'rou rou test',
+      author: 'Rukeith',
       template: 'src/index.html',
       hash: process.env.NODE_ENV === 'production',
+      minify: {
+        removeComments: process.env.NODE_ENV === 'production',
+        collapseWhitespace: process.env.NODE_ENV === 'production',
+        preserveLineBreaks: process.env.NODE_ENV === 'production',
+      },
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      as(entry) {
+        if (/\.css$/.test(entry)) return 'style';
+        if (/\.woff$/.test(entry)) return 'font';
+        if (/\.png$/.test(entry)) return 'image';
+        return 'script';
+      },
     }),
   ],
 };
