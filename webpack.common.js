@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, 'client/index.js'),
   output: {
     filename: '[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -16,6 +17,19 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   loader: 'eslint-loader',
+      //   options: {
+      //     cache: true,
+      //     emitError: true,
+      //     emitWarning: true,
+      //     failOnError: true,
+      //     failOnWarning: true,
+      //   },
+      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -29,26 +43,27 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            { loader: 'css-loader', options: { sourceMap: true } },
-            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'css-loader', options: { sourceMap: true, minimize: true } },
+            // { loader: 'postcss-loader', options: { sourceMap: true } },
             { loader: 'sass-loader', options: { sourceMap: true } },
           ],
         }),
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 8192, // file size is lower than 8192B will convert to base64
-          },
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
         },
       },
     ],
   },
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
     new CleanWebpackPlugin(['dist']),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: (process.env.NODE_ENV === 'production') ? 'disabled' : 'server',
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
@@ -57,11 +72,12 @@ module.exports = {
       disable: process.env.NODE_ENV !== 'production',
     }),
     new HtmlWebpackPlugin({
-      inject: 'body',
-      title: 'Rou Rou',
+      title: 'Blog',
+      inject: true,
       author: 'Rukeith',
-      template: 'src/index.html',
+      // favicon: './client/assets/favicon.ico',
       hash: process.env.NODE_ENV === 'production',
+      template: path.resolve(__dirname, 'client/index.html'),
       minify: {
         removeComments: process.env.NODE_ENV === 'production',
         collapseWhitespace: process.env.NODE_ENV === 'production',
